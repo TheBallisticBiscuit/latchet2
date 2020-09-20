@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5776388228938604560
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5530870541151258731}
-  - component: {fileID: 3676701791658405337}
-  m_Layer: 0
-  m_Name: Bullet Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5530870541151258731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5776388228938604560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7474467389427081984}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3676701791658405337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5776388228938604560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c352ffab456b78043afcf35a296eaa15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7975209908050764727, guid: b6d236afc90eaa6408dd6c293e82da05,
-    type: 3}
 --- !u!1 &7474467388456059759
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +222,7 @@ GameObject:
   - component: {fileID: 7474467389427081989}
   - component: {fileID: 7474467389427081990}
   - component: {fileID: 7474467389427081991}
-  - component: {fileID: 7474467389427081988}
+  - component: {fileID: 7242494668496017030}
   m_Layer: 0
   m_Name: ObviousGun
   m_TagString: Untagged
@@ -285,8 +240,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.20000005, y: -0.35000002, z: 0.711}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.7}
-  m_Children:
-  - {fileID: 5530870541151258731}
+  m_Children: []
   m_Father: {fileID: 7474467388456059756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,7 +304,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7474467389427081988
+--- !u!114 &7242494668496017030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,3 +318,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7975209908050764727, guid: b6d236afc90eaa6408dd6c293e82da05,
     type: 3}
+  friendlyTargets: []

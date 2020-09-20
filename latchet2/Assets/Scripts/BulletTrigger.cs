@@ -5,11 +5,12 @@ using UnityEngine;
 public class BulletTrigger : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public List<Health> friendlyTargets;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        friendlyTargets.Add(GetComponentInParent<Health>());
     }
 
     // Update is called once per frame
@@ -17,7 +18,8 @@ public class BulletTrigger : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Instantiate(bulletPrefab, transform.position, transform.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bullet.GetComponent<BulletDamage>().friendlyTargets = this.friendlyTargets;
         }
     }
 }

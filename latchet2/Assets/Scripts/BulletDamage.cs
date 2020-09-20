@@ -6,6 +6,7 @@ public class BulletDamage : MonoBehaviour
 {
     // Start is called before the first frame update
     public int damage = 20;
+    public List<Health> friendlyTargets;
     void Start()
     {
         
@@ -20,7 +21,7 @@ public class BulletDamage : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health hpScript = other.gameObject.GetComponent<Health>();
-        if (hpScript != null)
+        if (hpScript != null && !(this.friendlyTargets.Contains(hpScript)))
         {
             hpScript.TakeDamage(damage);
         }
