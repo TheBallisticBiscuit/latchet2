@@ -98,9 +98,10 @@ GameObject:
   - component: {fileID: 7474467388643120085}
   - component: {fileID: 7474467388643120088}
   - component: {fileID: 7474467388643120095}
+  - component: {fileID: 8643787465849076714}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +211,23 @@ MonoBehaviour:
   dashRange: 200
   dashSpeed: 50
   dashCastPoint: {fileID: 7474467388456059756}
+--- !u!114 &8643787465849076714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7474467388643120086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 209037615, guid: 01701b64234b4d523d8045142cbc73fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NetworkedInstanceId: 0
+  PrefabHash: 1897319656204293034
+  PrefabHashGenerator: Player
+  AlwaysReplicateAsRoot: 1
+  DontDestroyWithOwner: 0
 --- !u!1 &7474467389427081985
 GameObject:
   m_ObjectHideFlags: 0
