@@ -1070,33 +1070,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1957189254, guid: 472e9bf677af7f3469538c07b0acfcd4, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1957189254, guid: 472e9bf677af7f3469538c07b0acfcd4, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1957189254, guid: 472e9bf677af7f3469538c07b0acfcd4, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7474467388643120085, guid: 472e9bf677af7f3469538c07b0acfcd4,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7474467388643120085, guid: 472e9bf677af7f3469538c07b0acfcd4,
-        type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7474467388643120085, guid: 472e9bf677af7f3469538c07b0acfcd4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7474467388643120086, guid: 472e9bf677af7f3469538c07b0acfcd4,
         type: 3}
       propertyPath: m_Name
