@@ -7,22 +7,25 @@ public class PlayerController : MonoBehaviour
     public bool dashing;
     public float dashRange;
     public float dashSpeed;
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public Transform dashCastPoint;
     // Start is called before the first frame update
+    private Vector3 target;
+
     void Start()
     {
         dashing = false;
-        rb = this.GetComponent<Rigidbody>();
+        //rb = this.GetComponent<Rigidbody>();
+        //rb.velocity = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector3.zero;
+        //rb.velocity = Vector3.zero;
         if (Input.GetMouseButtonUp(1))
         {
-            Vector3 target = this.CalculateDashPoint();
+            target = this.CalculateDashPoint();
             if (target != Vector3.zero)
             {
                 this.dashing = true;
@@ -51,21 +54,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("COLLIDED");
+    //    this.dashing = false;
+    //    //this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    //    if (collision.collider.gameObject.GetComponent<Grabbable>())
+    //    {
+    //        this.gameObject.transform.SetParent(collision.transform);
+    //    }
+    //}
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("COLLIDED");
         this.dashing = false;
-        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        if (collision.collider.gameObject.GetComponent<Grabbable>())
-        {
-            this.gameObject.transform.SetParent(collision.transform);
-        }
+        //Move backwards one frame to prevent from sticking to walls
+        this.GetComponent<CharacterController>().Move((target * (Time.deltaTime * -1)));
+        //this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //if (collision.collider.gameObject.GetComponent<Grabbable>())
+        //{
+        //    this.gameObject.transform.SetParent(hit.transform);
+        //}
     }
+
     private IEnumerator Dash(Vector3 direction)
     {
         while(this.dashing == true)
         {
-            this.rb.MovePosition(transform.position + (direction * (Time.deltaTime * dashSpeed)));
+            this.GetComponent<CharacterController>().Move((direction * (Time.deltaTime * dashSpeed)));
+            //this.rb.MovePosition(transform.position + (direction * (Time.deltaTime * dashSpeed)));
             yield return null;
         }
     }
